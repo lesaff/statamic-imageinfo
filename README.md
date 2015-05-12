@@ -12,10 +12,18 @@ Use this plugin to get meta information from any given image
 Copy the 'imageinfo' folder to the '_add-ons' folder in your Statamic website.
 
 ## How to use
-`{{ imageinfo src="{ image }" }}`
+```
+{{ imageinfo src="{ image }" }}
+  width="{{ width }}" height="{{ height }}"
+{{ /imageinfo }}
+```
 
 or
-`{{ imageinfo src="/assets/img/image.png" }}`
+```
+{{ imageinfo src="/assets/img/image.png" }}
+  width="{{ width }}" height="{{ height }}"
+{{ /imageinfo }}
+```
 
 *Parameters*
 - `src`: The image source
@@ -26,4 +34,5 @@ or
 
 ## To do
 - Add the rest of the meta information as tags
+- Create modifier version of this plugin
 - Clean up the code
