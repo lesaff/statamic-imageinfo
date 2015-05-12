@@ -1,6 +1,6 @@
 # Image Info Add-on for Statamic
 By Rudy Affandi (2015)
-Version 1.0.0
+Version 1.0.1
 
 ## What is this?
 Use this plugin to get meta information from any given image
@@ -15,23 +15,35 @@ Copy the 'imageinfo' folder to the '_add-ons' folder in your Statamic website.
 ## How to use
 ```
 {{ imageinfo src="{ image }" }}
-  width="{{ width }}" height="{{ height }}"
+  <img src="{{ image }}" {{ dimension }} alt="" />
 {{ /imageinfo }}
 ```
+
+returns
+
+  `<img src="/assets/img/image.png" width="500" height="500" alt="" />`
 
 or
 ```
 {{ imageinfo src="/assets/img/image.png" }}
-  width="{{ width }}" height="{{ height }}"
+  <img src="/assets/img/image.png" width="{{ width }}" height="{{ height }}" alt="my Image" />
 {{ /imageinfo }}
 ```
 
-*Parameters*
+returns
+
+`<img src="/assets/img/image.png" width="500" height="500" alt="my Image" />`
+
+*Parameter*
 - `src`: The image source
 
 *Available tag output*
-- `width`
-- `height`
+- `width` returns the width of image
+- `height` returns the height of image
+- `dimension` returns `width="XX" height="YY"`
+- `bits` returns the number of bits for each color
+- `channel` returns either `3` for RGB, or `4` for CMYK
+- `mime` returns image mime type
 
 ## To do
 - Add the rest of the meta information as tags
