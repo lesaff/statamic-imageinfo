@@ -12,8 +12,6 @@ class Plugin_imageinfo extends Plugin {
     $file       = $this->fetchParam("src", null, null, null, false);
     $image_info = getimagesize(BASE_PATH . $file);
 
-    var_dump($image_info);
-
     $vars = Array(
       'width'  =>  $image_info[0],
       'height' =>  $image_info[1]
