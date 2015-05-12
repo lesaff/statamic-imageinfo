@@ -6,6 +6,7 @@ Version 1.0.0
 Use this plugin to get meta information from any given image
 
 ## Changelog
+1.0.1 - Added all available meta information from getimagesize()
 1.0.0 - Initial release
 
 ## Installation
