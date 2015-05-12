@@ -17,20 +17,10 @@ Copy the 'imageinfo' folder to the '_add-ons' folder in your Statamic website.
 or
 `{{ imageinfo src="/assets/img/image.png" }}`
 
-Simply give your field a type of `range_slider`
-```
-   col_width:
-      type: range_slider
-         display: Column width (based on grid of 10)
-         min: 1
-         max: 10
-         step: 1
-         default_value: 5
-```
 *Parameters*
 - `src`: The image source
 
-*Availabe tag output*
+*Available tag output*
 - `width`
 - `height`
 
