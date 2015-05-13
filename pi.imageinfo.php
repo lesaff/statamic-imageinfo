@@ -9,6 +9,7 @@
  * @license    http://opensource.org/licenses/MIT
  *
  * Versions
+ * 1.0.2       Fixed issue with displaying images from array
  * 1.0.1       Added all available meta information from getimagesize()
  * 1.0.0       Initial release
  */
@@ -28,6 +29,7 @@ class Plugin_imageinfo extends Plugin {
 
     if (isset($image_info)){
       $vars = Array(
+        'src'       =>  $file,
         'width'     =>  $image_info[0],
         'height'    =>  $image_info[1],
         'dimension' =>  $image_info[3],
