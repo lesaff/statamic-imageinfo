@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin_imageinfo
+ * Tasks_imageinfo
  * Image information addon for Statamic
  *
  * @author     Rudy Affandi <rudy@adnetinc.com>
@@ -15,7 +15,7 @@
  * 1.0.0       Initial release
  */
 
-class Plugin_imageinfo extends Plugin {
+class Tasks_imageinfo extends Tasks {
 
     var $meta = array(
         'name'          => 'Image Info',
@@ -24,10 +24,22 @@ class Plugin_imageinfo extends Plugin {
         'author_url'    => 'https://github.com/lesaff/statamic-imageinfo'
     );
 
-    public function index() {
-        $file       = $this->fetchParam("src", null, null, null, false);
-        $image_info = $this->tasks->getImageInfo($file);
+    public function getImageInfo($file)
+    {
+        $image_info = getimagesize(BASE_PATH . $file);
 
-        return $image_info;
+        if (isset($image_info)){
+            $vars = Array(
+                'src'       =>  $file,
+                'width'     =>  $image_info[0],
+                'height'    =>  $image_info[1],
+                'dimension' =>  $image_info[3],
+                'bits'      =>  $image_info['bits'],
+                'channels'  =>  $image_info['channels'],
+                'mime'      =>  $image_info['mime']
+            );
+
+            return $vars;
+        }
     }
 }
