@@ -35,7 +35,6 @@ class Tasks_imageinfo extends Tasks {
                 'height'    =>  $image_info[1],
                 'dimension' =>  $image_info[3],
                 'bits'      =>  $image_info['bits'],
-                'channels'  =>  $image_info['channels'],
                 'mime'      =>  $image_info['mime']
             );
 
